@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiq-Coder</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        /* Header Styles */
+        h1 {
+            text-align: center;
+            color: #ff0000;
+        }
+        
+        /* Form Styles */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        /* Textarea Styles */
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #c8c8c8;
+            font-size: 16px;
+            font-weight: bold;
+            resize: vertical;
+        }
+        
+        /* Button Styles */
+        button {
+            background-color: #ff0000;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Iframe Styles */
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #c8c8c8;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            form {
+                padding: 10px;
+            }
+            textarea {
+                padding: 5px;
+            }
+            button {
+                padding: 5px 10px;
+            }
+        }
+        
+        @media only screen and (max-width: 480px) {
+            form {
+                padding: 5px;
+            }
+            textarea {
+                padding: 2px;
+            }
+            button {
+                padding: 2px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- @Taiqsod-->
+    <h1>Taiq-Coder</h1>
+    <form id="codeForm">
+        <textarea id="code" rows="15" placeholder="Enter your HTML and CSS code here"></textarea>
+        <br>
+        <button type="button" onclick="runCode()">Run Code</button>
+    </form>
+    <iframe id="outputFrame"></iframe>
+    <footer>
+        &copy; 2025 Taiqsod
+    </footer>
+    <!-- @Taiqsod-->
+    <script>
+        function runCode() {
+            var code = document.getElementById('code').value;
+            var outputFrame = document.getElementById('outputFrame').contentWindow.document;
+            outputFrame.open();
+            outputFrame.write(code);
+            outputFrame.close();
+        }
+    </script>
+</body>
+</html>
